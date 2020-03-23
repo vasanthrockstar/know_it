@@ -2,6 +2,7 @@ import'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:intl/intl.dart';
+import 'package:know_it/HomeScreens/Home_page.dart';
 import 'package:know_it/common_variables/app_colors.dart';
 import 'package:know_it/common_variables/app_fonts.dart';
 import 'package:know_it/common_widgets/button_widget/to_do_button.dart';
@@ -263,8 +264,11 @@ class _F_SignUpPageState extends State<F_SignUpPage> {
                   text: 'Create',
                   textColor: subBackgroundColor,
                   backgroundColor: backgroundColor,
-                  onPressed: () => print("hjsdbv"),
-                  //model.canSubmit ? () => _submit(context) : null,
+                  onPressed: () {Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => HomePage(),),
+                  );}
+                  //model.canSubmit ? () => _submit(context) : null,HomePage
                 ),
                 SizedBox(height: 10.0),
                 ToDoButton(

@@ -36,7 +36,7 @@ class _F_VerifyOtpPageState extends State<F_VerifyOtpPage> {
       onlineChild: Padding(
         padding: const EdgeInsets.fromLTRB( 0, 0, 0, 0 ),
         child: Scaffold(
-          body: _buildContent( context ),
+          body: SingleChildScrollView(child: _buildContent( context )),
         ),
       ),
     );
@@ -72,6 +72,7 @@ class _F_VerifyOtpPageState extends State<F_VerifyOtpPage> {
 
           ),
         ),
+        SizedBox(height: 100.0),
         Padding(
           padding: const EdgeInsets.all(20.0),
           child: Column(

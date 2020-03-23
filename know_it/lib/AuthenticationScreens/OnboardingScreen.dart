@@ -25,139 +25,141 @@ Widget WelcomeScreen(BuildContext context)
 {
  return Container(
    color: Colors.white,
-   child: Column(
+   child: SingleChildScrollView(
+     child: Column(
 
-     mainAxisAlignment: MainAxisAlignment.spaceBetween,
-     children: <Widget>[
-       Container(
-         color: Color(0xFF222222),
-         height: MediaQuery.of(context).size.height/3,
-         width: MediaQuery.of(context).size.width,
-         child: Column(
-           mainAxisAlignment: MainAxisAlignment.center,
-           crossAxisAlignment: CrossAxisAlignment.start,
-           children: <Widget>[
-           Padding(
-             padding: const EdgeInsets.all(10.0),
-             child: Text("Welcome \nto Know It..!",style: bigTitleStyle,),
+       mainAxisAlignment: MainAxisAlignment.spaceBetween,
+       children: <Widget>[
+         Container(
+           color: Color(0xFF222222),
+           height: MediaQuery.of(context).size.height/3,
+           width: MediaQuery.of(context).size.width,
+           child: Column(
+             mainAxisAlignment: MainAxisAlignment.center,
+             crossAxisAlignment: CrossAxisAlignment.start,
+             children: <Widget>[
+             Padding(
+               padding: const EdgeInsets.all(10.0),
+               child: Text("Welcome \nto Know It..!",style: bigTitleStyle,),
+             ),
+
+             ],
+
            ),
-
-           ],
-
          ),
-       ),
 
-       Container(
-         child: Column(
-           children: <Widget>[
-             Center(
-               child: Padding(
-                 padding: const EdgeInsets.all(40.0),
-                 child: Column(
-                   children: <Widget>[
-                     Row(
+         Container(
+           child: Column(
+             children: <Widget>[
+               Center(
+                 child: Padding(
+                   padding: const EdgeInsets.all(40.0),
+                   child: Column(
                      children: <Widget>[
-                       Column(
+                       Row(
+                       children: <Widget>[
+                         Column(
+                           children: <Widget>[
+                             CircleAvatar(backgroundColor: subBackgroundColor,radius: 6,),
+                           ],
+                         ),
+                         SizedBox(width: 20,),
+                         Column(
+                           children: <Widget>[
+                             Text("I want to remove the black and \ncurrently the TextField. ",style: descriptionStyle,),
+                           ],
+                         )
+                       ],
+                     ),
+                       SizedBox(height: 10,),
+                       Row(
                          children: <Widget>[
-                           CircleAvatar(backgroundColor: subBackgroundColor,radius: 6,),
+                           Column(
+                             children: <Widget>[
+                               CircleAvatar(backgroundColor: subBackgroundColor,radius: 6,),
+                             ],
+                           ),
+                           SizedBox(width: 20,),
+                           Column(
+                             children: <Widget>[
+                               Text("I want to remove the black and \n currently the TextField. ",style: descriptionStyle,),
+                             ],
+                           )
                          ],
                        ),
-                       SizedBox(width: 20,),
-                       Column(
+                       SizedBox(height: 10,),
+                       Row(
                          children: <Widget>[
-                           Text("I want to remove the black and \ncurrently the TextField. ",style: descriptionStyle,),
+                           Column(
+                             children: <Widget>[
+                               CircleAvatar(backgroundColor: subBackgroundColor,radius: 6,),
+                             ],
+                           ),
+                           SizedBox(width: 20,),
+                           Column(
+                             children: <Widget>[
+                               Text("I want to remove the black and \ncurrently the TextField. ",style: descriptionStyle,),
+                             ],
+                           )
                          ],
-                       )
-                     ],
+                       ),
+                       SizedBox(height: 10,),
+                       Row(
+                         children: <Widget>[
+                           Column(
+                             children: <Widget>[
+                               CircleAvatar(backgroundColor: subBackgroundColor,radius: 6,),
+                             ],
+                           ),
+                           SizedBox(width: 20,),
+                           Column(
+                             children: <Widget>[
+                               Text("I want to remove the black and \ncurrently the TextField. ",style: descriptionStyle,),
+                             ],
+                           )
+                         ],
+                       ),
+                    ]
                    ),
-                     SizedBox(height: 10,),
-                     Row(
-                       children: <Widget>[
-                         Column(
-                           children: <Widget>[
-                             CircleAvatar(backgroundColor: subBackgroundColor,radius: 6,),
-                           ],
-                         ),
-                         SizedBox(width: 20,),
-                         Column(
-                           children: <Widget>[
-                             Text("I want to remove the black and \n currently the TextField. ",style: descriptionStyle,),
-                           ],
-                         )
-                       ],
-                     ),
-                     SizedBox(height: 10,),
-                     Row(
-                       children: <Widget>[
-                         Column(
-                           children: <Widget>[
-                             CircleAvatar(backgroundColor: subBackgroundColor,radius: 6,),
-                           ],
-                         ),
-                         SizedBox(width: 20,),
-                         Column(
-                           children: <Widget>[
-                             Text("I want to remove the black and \ncurrently the TextField. ",style: descriptionStyle,),
-                           ],
-                         )
-                       ],
-                     ),
-                     SizedBox(height: 10,),
-                     Row(
-                       children: <Widget>[
-                         Column(
-                           children: <Widget>[
-                             CircleAvatar(backgroundColor: subBackgroundColor,radius: 6,),
-                           ],
-                         ),
-                         SizedBox(width: 20,),
-                         Column(
-                           children: <Widget>[
-                             Text("I want to remove the black and \ncurrently the TextField. ",style: descriptionStyle,),
-                           ],
-                         )
-                       ],
-                     ),
-                  ]
                  ),
+               )
+
+             ],
+           ),
+
+         ),
+
+         Padding(
+           padding: const EdgeInsets.all(20.0),
+           child: Column(
+             children: <Widget>[
+               SizedBox(height: 10.0),
+               ToDoButton(
+                 assetName: 'images/google-lodgo.png',
+                 text: 'Login',
+                 textColor: backgroundColor,
+                 backgroundColor: inActiveButtonBackgroundColor,
+                 onPressed: () {Navigator.push(
+                   context,
+                   MaterialPageRoute(builder: (context) => LoginPage(),),
+                 );}
                ),
-             )
-
-           ],
+               SizedBox(height: 10.0),
+               ToDoButton(
+                 assetName: 'images/google-lodgo.png',
+                 text: 'Sign Up',
+                 textColor: subBackgroundColor,
+                 backgroundColor: backgroundColor,
+                  onPressed: () {Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => LoginPage(),),
+                  );}
+               ),
+             ],
+           ),
          ),
-
-       ),
-
-       Padding(
-         padding: const EdgeInsets.all(20.0),
-         child: Column(
-           children: <Widget>[
-             SizedBox(height: 10.0),
-             ToDoButton(
-               assetName: 'images/google-lodgo.png',
-               text: 'Login',
-               textColor: backgroundColor,
-               backgroundColor: inActiveButtonBackgroundColor,
-               onPressed: () {Navigator.push(
-                 context,
-                 MaterialPageRoute(builder: (context) => LoginPage(),),
-               );}
-             ),
-             SizedBox(height: 10.0),
-             ToDoButton(
-               assetName: 'images/google-lodgo.png',
-               text: 'Sign Up',
-               textColor: subBackgroundColor,
-               backgroundColor: backgroundColor,
-                onPressed: () {Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (context) => LoginPage(),),
-                );}
-             ),
-           ],
-         ),
-       ),
-     ],
+       ],
+     ),
    ),
  );
 }

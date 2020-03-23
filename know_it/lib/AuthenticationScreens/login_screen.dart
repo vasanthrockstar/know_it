@@ -36,7 +36,7 @@ class _F_LoginPageState extends State<F_LoginPage> {
       onlineChild: Padding(
         padding: const EdgeInsets.fromLTRB( 0, 0, 0, 0 ),
         child: Scaffold(
-          body: _buildContent( context ),
+          body: SingleChildScrollView(child: _buildContent( context )),
         ),
       ),
     );
@@ -72,6 +72,7 @@ class _F_LoginPageState extends State<F_LoginPage> {
 
             ),
           ),
+          SizedBox(height: 150.0),
           Padding(
             padding: const EdgeInsets.all(20.0),
             child: Column(
